@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<button @click="abc()">手动创建和删除</button>
+			<div v-show="myshow">动态显示和隐藏</div>
+			<div v-if="myif">删除和创建</div>
+			<hr/>
+			<button @click="addProduct()">点击添加购物车</button>
+			<button @click="deleteProduct()">点击清空购物车</button>
+			<ul v-if="datalist.length">
+				
+				<li v-for="data in datalist">
+					{{data}}
+				</li>
+				
+			</ul>
+			<div v-else>购物车空空如也</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el:"#box",
+				data:{
+					myshow:true,
+					myif:false,
+					datalist:[]
+				},
+				methods:{
+					addProduct(){
+						this.datalist=["111","222"]
+					},
+					abc(){
+						this.myif = !this.myif
+					},
+					deleteProduct(){
+						this.datalist=[]
+					}
+					
+					
+					
+				}
+				
+			})
+			
+		</script>
+	</body>
+</html>

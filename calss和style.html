@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		
+	</head>
+	
+	<body>
+		<!-- 动态绑定 class属性 -->
+		<div id="box">
+			<div v-bind:class="isActive?'a':'b'">动态绑定class属性</div>
+			<div v-bind:class="classobj">动态绑定class属性----对象写法</div>
+			<div v-bind:class="classarr">动态绑定class属性----数组写法</div>
+			<hr/>
+			<div v-bind:style="'background:'+(isActive?'red':'yellow')">动态绑定style属性</div>
+			<div v-bind:style="styleobj">动态绑定style属性----对象写法</div>
+			<div v-bind:style="stylearr">动态绑定style属性----数组写法</div>
+		</div>
+		<script>
+			var vm = new Vue({
+				el:"#box",
+				data:{
+					isActive:true,
+					classobj:{
+						a:true,
+						b:true
+					},
+					classarr:["a","b"],
+					
+					styleobj:{
+						background:"green"
+					},
+					stylearr:[]
+				}
+			})
+		</script>
+	</body>
+</html>

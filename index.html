@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<!-- {{}} 插值 一般只能对纯文本使用 -->
+			{{10+20}}
+			{{username}}
+			<!-- 指令 v-名字 -->
+			<div v-html="myhtml"></div>
+		</div>
+		<div id="aa">
+			{{10+20}}
+			{{username}}
+		</div>
+		<script>
+			var vm = new Vue({
+				
+				el:"#box",
+				data:{
+					username:"张三",
+					myhtml:	"<a href='https://www.baidu.com'>百度</a>"
+				}
+			})
+		</script>
+	</body>
+</html>
